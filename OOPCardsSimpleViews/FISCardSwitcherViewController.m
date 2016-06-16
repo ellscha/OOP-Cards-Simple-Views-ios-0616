@@ -3,6 +3,9 @@
 #import "FISCardSwitcherViewController.h"
 
 @interface FISCardSwitcherViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
+@property (weak, nonatomic) IBOutlet UILabel *middleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
 
 @end
 
@@ -22,4 +25,24 @@
                                                 rank:@"10"];
 }
 
+    //use cmd shift 6 for v
+    //MARK: actions
+- (IBAction)tenOfHeartsButton:(UIButton *)sender {
+    [self setLabelsForCard:self.tenOfHearts];
+}
+- (IBAction)eightOfDiamondsButton:(UIButton *)sender {
+    [self setLabelsForCard:self.eightOfDiamonds];
+}
+- (IBAction)fourOfClubsButton:(UIButton *)sender {
+    [self setLabelsForCard:self.fourOfClubs];
+}
+- (IBAction)threeOfSpadesButton:(UIButton *)sender {
+    [self setLabelsForCard:self.threeOfSpades];
+}
+
+-(void) setLabelsForCard:(FISCard *)card{
+    self.topLabel.text = card.cardLabel;
+    self.middleLabel.text = card.cardLabel;
+    self.bottomLabel.text = card.cardLabel;
+}
 @end
